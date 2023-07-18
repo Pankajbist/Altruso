@@ -2,13 +2,13 @@ const express = require('express')
 const mongoose = require('mongoose');
 require('dotenv').config()
 const connection= require('../src/db/connection')
-
+const product= require('../src/models/product')
 connection()
 const app = express()
 const port = 4000
 app.use(express.json())
 const { Schema } = mongoose;
-mongoose.connect('mongodb://localhost:27017/Uddeshya');
+mongoose.connect('mongodb://localhost:27017/Altruso');
 
 const productSchema = new Schema({
   productName: String, // String is shorthand for {type: String}
