@@ -2,11 +2,19 @@ const express = require('express')
 const mongoose = require('mongoose');
 require('dotenv').config()
 const connection= require('../src/db/connection')
-const product= require('../src/models/product')
+const Users= require('../src/models/users')
 connection()
 const app = express()
-const port = 3000
+const port = 4000
 app.use(express.json())
+
+
+app.post('/register', (req, res) => {
+  Users.create(req.body)
+  res.json({
+    msg: "Youre succesfully registered"
+  })})
+
 const { Schema } = mongoose;
 mongoose.connect('mongodb://localhost:27017/Altruso');
 
