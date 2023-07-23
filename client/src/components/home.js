@@ -11,7 +11,7 @@ export default function index() {
            
               
          
-        <div className="content">
+        <div class="content">
   <h1>Welcome to Altruso</h1>
   
   <p>
@@ -19,12 +19,10 @@ export default function index() {
   We're not just about design projects; we're on a mission to spark creativity and make a positive impact. With Altruso, every campaign has the power to change lives, as a portion of our funds go towards supporting meaningful charitable causes. Join us in shaping a brighter future through design and compassion.</p>
      
   
-  <div className="center-container">
-    <button type="button" class="button1"><span></span> START A CAMPAIGN NOW</button>
-  </div>
+ 
+    <button type="button"><span></span>START A CAMPAIGN NOW</button>
   </div>
                   
-            
         </section>
       
      </>

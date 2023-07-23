@@ -1,27 +1,186 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+ body{
+  margin:0;
+  font-family: 'Open Sans', sans-serif;
+}
+.container{
+  max-width: calc(0px);
+  margin: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+Footer{
+  position: absolute;
+  background-color: #000000;
+  padding: 0px 0;
+  color:#fff;
+ 
+
+  top: 97390;
+  width: 100%
+}
+
+header{
+  width: 30%;
+  margin: auto;
+  padding: 15px 0;
+  position:absolute ;
+  position: absolute;
+  left:  590px;
+  top: -30px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav{
+  width: 85%;
+  margin: auto;
+  padding: 55px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo{
+  width:100px;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  left: -650px;
+ 
+}
+.logo img{
+  max-width: 350px;
+  height: 200px;
+}
+ul.nav-menus{
+  display: flex;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    padding-left: 24px;
+    padding-right: 374px;
+    justify-self: flex-end;
+    -webkit-box-pack: end;
+    list-style: none;
+    font-size: 1.2rem;
+    
+}
+ul.nav-menus li{
+  align-self: center;
+  padding: 0 10px;
+  margin-bottom: 0;
+}
+ul.nav-menus li a{
+  color:aqua;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 16px;
+  border-radius: 30px;
+  padding: 10px 12px;
+  white-space: nowrap;
+}
+ul.nav-menus li a.active,
+ul.nav-menus li a:hover{
+  color: rgb(0, 0, 0);
+  background-color: aqua;
+}
+
+.hero{
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+.content{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #fff;
   }
+  .content h1{
+  
+  
+  font-size: 50px;
+  margin-top: 80px;
+  }
+  button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid aqua;
+    background: transparent;
+    color:#0d0d0d;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+
+}
+span{
+  background:aqua;
+  height:100%;
+  width:0;
+  border-radius:25px;
+  position:absolute;
+  left:0;
+  bottom:0;
+  z-index:-1;
+  transition:0.5s;
+
+}
+button:hover span{
+  width: 100%;
+
+}
+button:hover{
+  border:none;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.app--login{
+  max-width: 100px;
+  margin:0 auto;
 }
+.app--login input + div{
+  color:red;
+}
+
+
+.button1{
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid aqua;
+  background: transparent;
+  color:#fff;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+
+}
+span{
+background:aqua;
+height:100%;
+width:0;
+border-radius:25px;
+position:absolute;
+left:0;
+bottom:0;
+z-index:-1;
+transition:0.5s;
+
+}
+button:hover span{
+width: 100%;
+
+}
+button:hover{
+border:none;
+}
+
