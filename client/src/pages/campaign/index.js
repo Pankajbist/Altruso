@@ -25,6 +25,10 @@ const Campaign = () => {
             phoneNumber: phoneNumber,
             address: address,
             state: state,
+
+
+
+            // 
             nationality: nationality,
             cause: cause,
             bankAccountHolder: bankAccountHolder,
