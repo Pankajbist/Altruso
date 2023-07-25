@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import { Button, message } from 'antd';
+import { useHistory } from 'react-router-dom';
+import { useRouter } from 'next/navigation'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const Register = () => {
+  const router = useRouter()
+      const [msg, contextHolder] = message.useMessage();   
   const SignupSchema = Yup.object().shape({
     fullName: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
     password: Yup.string().min(5, 'Password Too Short!').required('Required'),
@@ -20,20 +25,37 @@ const Register = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleRegister = async (values) => {
-    const { confirmPassword, ...formFields } = values;
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formFields),
-    };
-    const res = await fetch('http://localhost:4000/register', requestOptions);
-    const data = await res.json();
-    if (data) {
-      alert(data.msg);
-      // Redirect to localhost/3000 on successful registration
-      window.location.href = 'http://localhost:3000';
+    try {
+      const { confirmPassword, ...formFields } = values;
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formFields),
+      };
+      const res = await fetch('http://localhost:4000/register', requestOptions);
+      
+      if (!res.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      const data = await res.json();
+      
+      if (data && res.status === 200) {
+        router.push('/');
+        setTimeout(() => {
+          msg.info(data.msg);
+        }, 2000);
+      } else {
+        msg.info(res.statusText);
+      }
+    } catch (error) {
+      console.error('Fetch Error:', error);
     }
   };
+  
+      // Redirect to localhost/3000 on successful registration
+     
+  
 
   // Inline CSS styles (you can also use a separate CSS file as shown in previous responses)
   
