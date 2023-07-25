@@ -131,11 +131,11 @@ app.use(cors())
 const port = process.env.PORT
 app.use(express.json())
 const PORT = process.env.PORT || 5000;
-app.get('/checkUserExists/:phoneNumber', async (req, res) => {
+app.get('/checkUserExists/:email', async (req, res) => {
   const data= await Users.findOne({phoneNumber:req.params.phoneNumber})
   if(data){
     res.json({
-      msg:"Phone Number already exists"
+      msg:"Email Id already exists"
     })
   }
   else{

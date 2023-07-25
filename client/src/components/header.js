@@ -36,12 +36,12 @@ export default function Header() {
           <ul className="nav-menus">
             <li>
               <Link href="/About">
-                ABOUT
+                ABOUT-US
               </Link>
             </li>
             <li>
               <Link href="/contact">
-                CONTACTUS
+                CONTACT-US
               </Link>
             </li>
             {isAuthenticated ? (

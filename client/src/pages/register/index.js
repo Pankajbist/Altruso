@@ -161,7 +161,7 @@ const Register = () => {
                 </div>
                 <div className="form-group">
                   <label>Phone Number</label>
-                  <Field name="phoneNumber" type="text" placeholder="Phone Number" style={inputStyle} />
+                  <Field name="phoneNumber" type="text" placeholder="Phone Number [Optional]" style={inputStyle} />
                   {errors.phoneNumber && touched.phoneNumber ? (
                     <div style={errorMessageStyle}>{errors.phoneNumber}</div>
                   ) : null}
