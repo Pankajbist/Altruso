@@ -1,32 +1,37 @@
-const Users = require('../models/users');
+const Users = require('../models/users')
 const bcrypt = require('bcrypt');
-const saltRounds = 10;
+const jwt = require('jsonwebtoken');
+const saltRounds = 10
 
-const registerUser = async (req, res) => {
-    try {
-        // Check if user already exists
-        const data = await Users.findOne({ email: req.body.email });
-        if (data) {
-            res.status(409).json({
-                msg: "Email already exists",
-                success: false
-            });
-        } else {
-            // Create a hash password of req.body.password
-            req.body.password = await bcrypt.hash(req.body.password, saltRounds);
-            await Users.create(req.body);
-            res.status(201).json({
-                msg: "You are successfully registered",
-                success: true
-            });
+    const registerUser=  async(req, res) => {
+        try{
+            
+            //step 1 : check if user already exists
+            const data= await Users.findOne({BankAccountNumber:req.body.BankAccountNumber })
+            if(data){
+                res.status(409).json({
+                    msg: "Bank Account Already Exists ",
+                    success: false
+                })
+            }else{
+                    //step 2: create a hash password of req.body.password
+                    req.body.password = await bcrypt.hash(req.body.password, saltRounds)
+                    //step 3: create a jwt token for user
+                    const token = jwt.sign({ BankAccountNumber: req.body.BankAccountNumber }, process.env.SECRET_KEY);
+                    console.log(token)
+                    await Users.create(req.body)
+                    res.json({
+                        msg: "you are successfully registered",
+                        success: true
+                    })
+                    
+            }
+          
+        }catch(err){
+            console.log(err)
+
         }
-    } catch (err) {
-        console.log(err);
-        res.status(500).json({
-            msg: "Internal Server Error",
-            success: false
-        });
+      
     }
-};
 
-module.exports = { registerUser };
+    module.exports = {registerUser}

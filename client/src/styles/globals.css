@@ -373,8 +373,8 @@ footer {
   gap: 20px;
   width: 60%;
   margin: auto;
-  box-shadow:aqua;
-  box-shadow: aqua;
+  box-shadow:#000;
+  box-shadow: #000;
   margin-bottom: 2%;
 }
 
@@ -417,7 +417,7 @@ footer {
   /* opacity: 0.1; */
   /* color: black; */
   background-color: whitesmoke;
-  border: 1px aqua;
+  border: 1px #000;
   border-radius: 7px;
   box-shadow: aqua;
 }
@@ -586,7 +586,7 @@ footer {
   text-align: center;
   position: relative;
   padding-bottom: 20px;
-  color: aqua;
+  color:#000;
 }
 
 .main-heading::after{
@@ -857,3 +857,11 @@ footer {
 /* -------------------------------------------------------------------------------------------------------------- */
 
 
+.message {
+  text-align: center;
+  /* Add other styles as needed */
+}
+
+.error {
+  color: red; /* or any other color you prefer for error messages */
+}

@@ -13,11 +13,9 @@ const Register = () => {
       const [msg, contextHolder] = message.useMessage();   
   const SignupSchema = Yup.object().shape({
     fullName: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
-    password: Yup.string().min(5, 'Password Too Short!').required('Required'),
-    confirmPassword: Yup.string()
-      .min(5, 'Password Too Short!')
-      .required('Required')
-      .oneOf([Yup.ref('password'), null], 'Passwords must match'),
+    BankAccountNumber: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
+    password: Yup.string().min(8, 'Password Too Short!').max(50, 'Too Long!').required('Required'),
+    confirmPassword: Yup.string().max(50, 'Too Long').min(8, 'Password Too Short!').required('Required').oneOf([Yup.ref('password'), null], 'Passwords must match'),
     email: Yup.string().email('Invalid email').required('Required'),
   });
 
@@ -42,6 +40,7 @@ const Register = () => {
       
       if (data && res.status === 200) {
         router.push('/');
+    
         setTimeout(() => {
           msg.info(data.msg);
         }, 2000);
@@ -50,6 +49,7 @@ const Register = () => {
       }
     } catch (error) {
       console.error('Fetch Error:', error);
+      message.error('!Conflict');
     }
   };
   
@@ -76,7 +76,17 @@ const Register = () => {
   const h2Style = {
     textAlign: 'center',
     marginBottom: '20px',
+  
+ 
   };
+  const h3Style = {
+    textAlign: 'center',
+    marginBottom: '20px',
+    color:"aqua"
+  
+ 
+  };
+
 
   const inputStyle = {
     width: '100%',
@@ -113,12 +123,15 @@ const Register = () => {
     <>
       <div style={containerStyle}>
         <div style={appLoginStyle}>
+          
           <h2 style={h2Style}>Sign up</h2>
+          <h3 style={h3Style}>_______________________________________________________</h3>
+       
           <Formik
             initialValues={{
               fullName: '',
               email: '',
-              phoneNumber: '',
+              BankAccountNumber: '',
               password: '',
               confirmPassword: '',
             }}
@@ -182,10 +195,10 @@ const Register = () => {
                   ) : null}
                 </div>
                 <div className="form-group">
-                  <label>Phone Number</label>
-                  <Field name="phoneNumber" type="text" placeholder="Phone Number [Optional]" style={inputStyle} />
-                  {errors.phoneNumber && touched.phoneNumber ? (
-                    <div style={errorMessageStyle}>{errors.phoneNumber}</div>
+                  <label>Bank Account Number</label>
+                  <Field name="BankAccountNumber" type="text" placeholder="BankAccountNumber" style={inputStyle} />
+                  {errors.BankAccountNumber && touched.BankAccountNumber ? (
+                    <div style={errorMessageStyle}>{errors.BankAccountNumber}</div>
                   ) : null}
                 </div>
                 <button  type="submit"

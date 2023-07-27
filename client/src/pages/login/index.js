@@ -71,10 +71,11 @@ const Login = () => {
 
   const LoginSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
+    BankAccountNumber: Yup.string().min(8, 'Password must be at least 8 characters').required('Required'),
     password: Yup.string().min(8, 'Password must be at least 8 characters').required('Required'),
   });
 
-  const { email, password } = formData;
+  const { email,BankAccountNumber, password } = formData;
 
   return (
     <div
@@ -87,6 +88,8 @@ const Login = () => {
       }}
     >
       <h1 style={{ textAlign: 'center' }}>LOGIN</h1>
+      <h3 style={{ textAlign: 'center',color:"aqua" }}>_______________________________________</h3>
+       
       <form onSubmit={handleLogin} style={{ display: 'grid', gap: '10px' }}>
         <div>
           <label style={{ fontWeight: 'bold' }}>Email:</label>
@@ -99,6 +102,18 @@ const Login = () => {
             style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '5px' }}
           />
           <p style={{ color: 'red', fontSize: '14px', margin: '5px 0' }}>{LoginSchema.errors?.email}</p>
+        </div>
+        <div>
+        <label style={{ fontWeight: 'bold' }}>Bank Account Number:</label>
+          <input
+            type="BankAccountNumber"
+            name="BankAccountNumber"
+            value={BankAccountNumber}
+            onChange={handleInputChange}
+            placeholder="Enter your BankAccountNumber"
+            style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '5px' }}
+          />
+          <p style={{ color: 'red', fontSize: '14px', margin: '5px 0' }}>{LoginSchema.errors?.BankAccountNumber}</p>
         </div>
         <div>
           <label style={{ fontWeight: 'bold' }}>Password:</label>
