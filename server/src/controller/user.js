@@ -18,16 +18,17 @@ const saltRounds = 10
                     req.body.password = await bcrypt.hash(req.body.password, saltRounds)
                     //step 3: create a jwt token for user
                     const token = jwt.sign({ BankAccountNumber: req.body.BankAccountNumber }, process.env.SECRET_KEY);
-                    console.log(token)
-                    await Users.create(req.body)
-                    res.json({
-                        msg: "you are successfully registered",
-                        success: true,
-                        token,
-                        userDetails: data 
-                    })
-                    
-            }
+                    const data = await Users.create(req.body)
+                    if(data){
+                        const {password, ...otherFields} = data._doc
+                        res.json({
+                            msg: "you are successfully registered",
+                            success: true,
+                            token,
+                            userDetails: otherFields
+                        })
+                    }
+                }
           
         }catch(err){
             console.log(err)

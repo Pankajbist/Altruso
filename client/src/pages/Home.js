@@ -32,7 +32,7 @@ const home = () => {
       
 
               <a className='button1'>
-                <span></span> START A Journey With Us
+                <span></span> START A CAMPAIGN
               </a>
             </Link>
           </div>

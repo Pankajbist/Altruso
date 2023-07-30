@@ -13,8 +13,8 @@ export default function Header() {
         <ul className="nav-menu">
             <li><a href="/About">ABOUT-US</a></li>
             <li><a  href="/Contact">CONTACT-US</a></li>
-            <li><a className="active" href="/About">ABOUT-US</a></li>
-            <li><a className="active" href="/Contact">CONTACT-US</a></li>
+            <li><a className="active" href="/About">What We Do</a></li>
+            <li><a className="active" href="/Contact">User</a></li>
         </ul>
        </nav>
     </div>

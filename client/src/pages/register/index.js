@@ -6,10 +6,13 @@ import { useHistory } from 'react-router-dom';
 import { useRouter } from 'next/navigation'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { setUserDetails } from '@/redux/reducerSlice/users';
+import { useDispatch } from 'react-redux';
 
 
 const Register = () => {
   const router = useRouter()
+  const dispatch=useDispatch()
       const [msg, contextHolder] = message.useMessage();   
   const SignupSchema = Yup.object().shape({
     fullName: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
@@ -39,6 +42,8 @@ const Register = () => {
       const data = await res.json();
       
       if (data && res.status === 200) {
+       
+        dispatch(setUserDetails(data))
         router.push('http://localhost:3000/Home');
     
         setTimeout(() => {
