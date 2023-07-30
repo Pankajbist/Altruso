@@ -39,7 +39,7 @@ const Register = () => {
       const data = await res.json();
       
       if (data && res.status === 200) {
-        router.push('/');
+        router.push('http://localhost:3000/Home');
     
         setTimeout(() => {
           msg.info(data.msg);

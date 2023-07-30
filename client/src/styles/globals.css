@@ -54,24 +54,24 @@ nav{
   max-width: 350px;
   height: 200px;
 }
-ul.nav-menus{
+ul.nav-menu{
   display: flex;
     -webkit-box-flex: 0;
     flex: 0 0 auto;
-    padding-left: 24px;
-    padding-right: 374px;
+    padding-left: 324px;
+    padding-right: 1674px;
     justify-self: flex-end;
     -webkit-box-pack: end;
     list-style: none;
     font-size: 1.2rem;
     
 }
-ul.nav-menus li{
+ul.nav-menu li{
   align-self: center;
   padding: 0 10px;
   margin-bottom: 0;
 }
-ul.nav-menus li a{
+ul.nav-menu li a{
   color:aqua;
   text-decoration: none;
   font-weight: 500;
@@ -80,8 +80,8 @@ ul.nav-menus li a{
   padding: 10px 12px;
   white-space: nowrap;
 }
-ul.nav-menus li a.active,
-ul.nav-menus li a:hover{
+ul.nav-menu li a.active,
+ul.nav-menu li a:hover{
   color: rgb(0, 0, 0);
   background-color: aqua;
 }
@@ -100,7 +100,7 @@ ul.nav-menus li a:hover{
   color: #fff;
   }
   .content h1{
-  
+    color: aqua;
   
   font-size: 50px;
   margin-top: 80px;
@@ -191,7 +191,7 @@ border:none;
   overflow: hidden;
   padding: 12px 30px;
   background-color: none; /* Default button color */
-  color: #fff; /* Text color */
+  color: #000; /* Text color */
   text-decoration: none;
   transition: background-color 1s ease;
 }
@@ -864,4 +864,67 @@ footer {
 
 .error {
   color: red; /* or any other color you prefer for error messages */
+}
+/* ContactUsPage.css */
+.contact-us-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-us-container h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contact-us-description {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
 }

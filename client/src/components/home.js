@@ -1,30 +1,25 @@
-import React from 'react'
-import Header from '../components/header'
-import Heroimg from '../../public/Altruso-background.png'
-
-export default function index() {
+import Image from 'next/image';
+import React, { useState } from 'react';
+import Logo from '../../public/Altruso-logo.png';
+import Link from 'next/link';
+export default function Header() {
   return (
-    <>
-      <Header/>
-        <section className='hero' style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(${Heroimg.src})`}}>
+   <header>
+    <div className="container">
+       <nav>
+        <div className="logo">
+           <a href='/'><Image src={Logo} alt="Picture of the author"/></a>
+        </div>
+        <ul className="nav-menu">
+            <li><a href="/About">ABOUT-US</a></li>
+            <li><a  href="/Contact">CONTACT-US</a></li>
+            <li><a className="active" href="/About">ABOUT-US</a></li>
+            <li><a className="active" href="/Contact">CONTACT-US</a></li>
+        </ul>
+       </nav>
+    </div>
         
-           
-              
-         
-        <div class="content">
-  <h1>Welcome to Altruso</h1>
-  
-  <p>
-    Altruso: Crowdfunding with a Heart. <br></br>
-  We're not just about design projects; we're on a mission to spark creativity and make a positive impact. With Altruso, every campaign has the power to change lives, as a portion of our funds go towards supporting meaningful charitable causes. Join us in shaping a brighter future through design and compassion.</p>
-     
-  
- 
-    <button type="button"><span></span>START A CAMPAIGN NOW</button>
-  </div>
-                  
-        </section>
-      
-     </>
+    </header>
+    
   )
 }

@@ -22,7 +22,9 @@ const saltRounds = 10
                     await Users.create(req.body)
                     res.json({
                         msg: "you are successfully registered",
-                        success: true
+                        success: true,
+                        token,
+                        userDetails: data 
                     })
                     
             }
