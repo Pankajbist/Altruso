@@ -54,17 +54,36 @@ nav{
   max-width: 350px;
   height: 200px;
 }
-ul.nav-menu{
+.user-avatar{
   display: flex;
     -webkit-box-flex: 0;
     flex: 0 0 auto;
-    padding-left: 324px;
-    padding-right: 1674px;
+    padding-left: -2894px;
+    padding-right: -674px;
     justify-self: flex-end;
     -webkit-box-pack: end;
     list-style: none;
     font-size: 1.2rem;
     
+}
+.user-avatar{
+  align-self: center;
+  padding: 0 10px;
+  margin-bottom: 0;
+}
+.user-avatar a{
+  color:aqua;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 16px;
+  border-radius: 30px;
+  padding: 10px 12px;
+  white-space: nowrap;
+}
+.user-avatar a.active,
+.user-avatar a:hover{
+  color: rgb(0, 0, 0);
+  background-color: aqua;
 }
 ul.nav-menu li{
   align-self: center;
@@ -85,7 +104,49 @@ ul.nav-menu li a:hover{
   color: rgb(0, 0, 0);
   background-color: aqua;
 }
-
+ul.nav-menu{
+  display: flex;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    padding-left: 294px;
+    padding-right: 74px;
+    justify-self: flex-end;
+    -webkit-box-pack: end;
+    list-style: none;
+    font-size: 1.2rem;
+    
+}
+ul.nav-menus li{
+  align-self: center;
+  padding: 0 10px;
+  margin-bottom: 0;
+}
+ul.nav-menus li a{
+  color:aqua;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 16px;
+  border-radius: 30px;
+  padding: 10px 12px;
+  white-space: nowrap;
+}
+ul.nav-menus li a.active,
+ul.nav-menus li a:hover{
+  color: rgb(0, 0, 0);
+  background-color: aqua;
+}
+ul.nav-menus{
+  display: flex;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    padding-left: 294px;
+    padding-right: 74px;
+    justify-self: flex-end;
+    -webkit-box-pack: end;
+    list-style: none;
+    font-size: 1.2rem;
+    
+}
 .hero{
   background-size: cover;
   width: 100%;
