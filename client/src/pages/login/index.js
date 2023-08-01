@@ -38,7 +38,7 @@ const Login = () => {
 
       // For now, just assume login is successful.
       setTimeout(() => {
-        router.push('http://localhost:3000/Home');
+        router.push('http://localhost:3000/home');
       }, 100);
 
     } catch (error) {

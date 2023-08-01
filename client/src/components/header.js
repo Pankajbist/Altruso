@@ -1,62 +1,163 @@
-import React from 'react';
-import Image from 'next/image';
-import Logo from '../../public/Altruso-logo.png';
-import Link from 'next/link';
-import { Avatar } from 'antd';
+import { Avatar, Space, Popover } from 'antd';
 import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import CustomLogo from './logo';
 
-const NavMenu = () => {
-  const navLinkStyles = {
-    marginLeft: '16px',
-    textDecoration: 'none',
-    color: 'aqua',
+function NavBar() {
+  const router = useRouter();
+  const { isLoggedIn, userDetails } = useSelector(state => state.users);
+
+  const handleLogout = () => {
+    router.push('/profile');
   };
 
-  return (
-    <ul className="nav-menus">
-      <li>
-        <Link href="/Contact"legacyBehavior>
-          <a style={navLinkStyles}>Contact-Us</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/About"legacyBehavior>
-          <a style={navLinkStyles}>What We Do</a>
-        </Link>
-      </li>
-      {/* Add more navigation links as needed */}
-    </ul>
+  const content = (
+    <div>
+      <Link href="/profile"legacyBehavior>
+        <a>Profile</a>
+      </Link>
+      <p onClick={handleLogout}>Logout</p>
+    </div>
   );
-};
-
-const Header = () => {
-  const { fullName } = useSelector((state) => state.users);
-
-  
 
   return (
     <header>
-      <div className="container">
-        <nav>
-          <div className="logo" style={logoStyles}>
+      <nav className="navbar">
+        <div className="nav-container">
+          <div className="logo">
             <Link href="/"legacyBehavior>
-              <a style={logoLinkStyles} >
-                <Image src={Logo} alt="Altruso Logo" />
+              <a>
+                <CustomLogo />
               </a>
             </Link>
           </div>
-          {/* Include the NavMenu component */}
-          <NavMenu />
-          <div className="user-avatar">
-            <Avatar  size="small">
-              {fullName ? fullName.charAt(0) : 'U'}
-            </Avatar>
-            <span style={{ marginLeft: '8px', color: 'aqua' }}>{fullName}</span>
-          </div>
-        </nav>
-      </div>
+
+          {isLoggedIn ? (
+            <div>
+              <Popover
+                placement="bottom"
+                title={userDetails.fullName}
+                content={content}
+                trigger="click"
+                overlayClassName="avatar-popover" // Apply specific styling for Popover
+              >
+                <Avatar size="large" className="user-avatar">
+                  {userDetails.fullName[0]}
+                </Avatar>
+              </Popover>
+            </div>
+          ) : (
+            <ul className="nav-menus"legacyBehavior>
+              <li>
+                <Link href="/login"legacyBehavior>
+                  <a>Login</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/register"legacyBehavior>
+                  <a className="active">Signup</a>
+                </Link>
+              </li>
+            </ul>
+          )}
+        </div>
+      </nav>
+      <style jsx>{`
+        /* Navbar container */
+        .nav-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem;
+          background-color: #f0f0f0;
+        }
+
+        /* Logo */
+        .logo a {
+          text-decoration: none;
+          color: #000;
+          font-weight: bold;
+          font-size: 1.5rem;
+        }
+
+        /* Logo image */
+        .logo img {
+          width: 40px;
+          height: 40px;
+        }
+
+        /* Nav menus for logged-out users */
+        .nav-menus {
+          list-style: none;
+          display: flex;
+        }
+
+        .nav-menus li {
+          margin-right: 1rem;
+        }
+
+        .nav-menus a {
+          text-decoration: none;
+          color: #000;
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+        }
+
+        /* Active menu item */
+        .nav-menus a.active {
+          background-color: #007bff;
+          color: #fff;
+        }
+
+        /* User Avatar */
+        .user-avatar {
+          cursor: pointer;
+        }
+
+        /* Popover content */
+        .avatar-popover {
+          padding: 1rem;
+        }
+
+        .avatar-popover a {
+          display: block;
+          margin-bottom: 0.5rem;
+          color: #000;
+          text-decoration: none;
+        }
+
+        .avatar-popover p {
+          cursor: pointer;
+          color: #007bff;
+          margin: 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+          .nav-container {
+            flex-direction: column;
+          }
+
+          .logo {
+            margin-bottom: 1rem;
+          }
+
+          .nav-menus {
+            margin-top: 1rem;
+          }
+
+          .nav-menus li {
+            margin-right: 0.5rem;
+          }
+
+          .user-avatar {
+            margin-top: 1rem;
+          }
+        }
+      `}</style>
     </header>
   );
-};
+}
 
-export default Header;
+export default NavBar;

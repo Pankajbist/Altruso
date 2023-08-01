@@ -1,8 +1,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Header from '../components/home';
-import Heroimg from '../../public/Altruso-background.jpg';
+import Header from '../../components/header';
+import Heroimg from '../../../public/Altruso-background.jpg';
 import { useSelector } from'react-redux';
 
 const home = () => {
@@ -14,10 +14,7 @@ const home = () => {
       <Header />
       <section
         className='hero'
-        style={{
-          backgroundImage: "url('Altruso-background.jpg')",
-        }}
-      >
+        style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),url(${Heroimg.src})`}}>
         <div className='content'>
           <h1>Welcome to Altruso {fullName}</h1>
           <p>

@@ -44,7 +44,7 @@ const Register = () => {
       if (data && res.status === 200) {
        
         dispatch(setUserDetails(data))
-        router.push('http://localhost:3000/Home');
+        router.push('http://localhost:3000/home');
     
         setTimeout(() => {
           msg.info(data.msg);
