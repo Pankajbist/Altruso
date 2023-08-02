@@ -61,12 +61,10 @@ export default function Header() {
           <Drawer      title=
       
           <b style={{  fontSize: '1.5rem' }}>{"Edit_Your_Profile"}</b>
-    
 
             placement="right"
             closable={true}
             onClose={hideDrawer}
-            
             visible={isDrawerVisible}
             width={300}
           >
@@ -81,7 +79,7 @@ export default function Header() {
       ) : (
         <ul className="nav-menus">
           <li>
-            <a href="/login">Login</a>
+            <a href="/login" className="active">Login</a>
           </li>
           <li>
             <a href="/register" className="active">
