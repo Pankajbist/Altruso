@@ -79,8 +79,20 @@ Join Altruso today and embark on an extraordinary journey of giving, innovation,
 ### Built With
 
 
-* [![React][React.js]][React-url]
-* many more...
+
+
+- ![MongoDB][MongoDB]
+- ![Express][Express.js]
+- ![React.js]
+- ![Node.js]
+-   [![Next][Next.js]][Next-url]
+- ![JavaScript]
+- ![Redux]
+- ![Axios]
+- ![Git]
+- ![ESLint]
+- ![npm]
+* Many more....
 
 
 <p align="right">(<a href="#readme-top">Back to top</a>)</p>
@@ -155,7 +167,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 ### Design & Development 
-- [ ] I. Structure, Pages & Navigation 
+- [X] I. Structure, Pages & Navigation 
     - [X] Home Page
     - [ ] Project Details Page
     - [ ] User Profile Page
@@ -164,7 +176,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [ ] Category/Tags Pages
     - [ ] Search Results Page
     - [ ] Payment/Checkout Flow
-    - [ ] User Authentication & Registration
+    - [X] User Authentication & Registration
 
 - [ ] II. Extra Features & Functionality:
     - [ ] Social Media Sharing
@@ -322,4 +334,18 @@ Project Link: [https://github.com/Pankajbist/Altruso](https://github.com/Pankajb
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+[MongoDB]:https://img.shields.io/badge/mongodb-47A248?style=for-the-badge&logo=mongodb&logoColor=white
+[MongoDB-url]:https://www.mongodb.com/
+ [Express.js]:https://img.shields.io/badge/express.js-000000?style=for-the-badge&logo=express&logoColor=white
+ [React.js]:https://img.shields.io/badge/react.js-61DAFB?style=for-the-badge&logo=react&logoColor=white 
+[Node.js]:https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white
+ [JavaScript]:https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+ [HTML]:(https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white 
+
+[Redux]:https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=white 
+ [Axios]:https://img.shields.io/badge/axios-007EC6?style=for-the-badge&logo=axios&logoColor=white 
+ [Git]:https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white
+
+ [ESLint]:https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white
+[npm]:https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white
 
