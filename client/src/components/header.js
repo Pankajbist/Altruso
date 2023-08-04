@@ -20,6 +20,7 @@ export default function Header() {
   const {isLoggedIn, userDetails} = useSelector(state=>state.users)
   const content = (
     <div>
+         
       <p onClick={userLogout}>Logout</p>
     </div>
   );
@@ -57,7 +58,7 @@ export default function Header() {
           </a>
 
           <Drawer
-            title={<b style={{ fontSize: '1.5rem' }}>{"Edit Your Profile"}</b>}
+            title={<b style={{ fontSize: '1.5rem' }}>{"Edit_YourProfile"}</b>}
             placement="right"
             closable={true}
             onClose={hideDrawer}

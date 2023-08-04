@@ -37,5 +37,35 @@ const saltRounds = 10
         }
       
     }
+    const loginUser = async (req, res) => {
+        try {
+            const data = await Users.findOne({ BankAccountNumber: req.body.BankAccountNumber })
+            if (data) {
+                const isMatched = await bcrypt.compare(req.body.password, data.password)
+                if (isMatched) {
+                    const token = jwt.sign({ BankAccountNumber: req.body.BankAccountNumber }, process.env.SECRET_KEY);
+                    res.json({
+                        token: token,
+                        success: true,
+                        userDetails: data
+                    })
+                } else {
+                    res.json({
+                        success: false,
+                        msg: "Password didn't matched"
+                    })
+                }
+            } else {
+                res.json({
+                    success: false,
+                    msg: "Bank account doesn't exist"
+                })
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    
+    }
+    
+    module.exports = { registerUser, loginUser }
 
-    module.exports = {registerUser}
