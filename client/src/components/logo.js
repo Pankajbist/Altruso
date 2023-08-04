@@ -5,7 +5,7 @@ import Logo from '../../public/Altruso-logo.png'
 export const CustomLogo=()=> {
   return (
     <div>
-           <Image src={Logo} alt="Picture of the author"/>
+           <Image src={Logo} alt="logo"/>
     </div>
   )
 }

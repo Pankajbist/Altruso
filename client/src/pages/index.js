@@ -5,50 +5,41 @@ import Header from '../components/header';
 import Heroimg from '../../public/Altruso-background.jpg';
 import { useSelector } from'react-redux';
 
-const Index = () => {
+const home = () => {
+  const { fullName, isLoggedIn } = useSelector(state => state.users);
 
-  const {fullName}= useSelector (state=>state.users)
 
   return (
     <>
       <Header />
       <section
         className='hero'
-        style={{
-          backgroundImage: "url('Altruso-background1.jpg')",
-        }}
-      >
+        style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),url(${Heroimg.src})`}}>
         <div className='content'>
-        <h1>
-            Welcome to ALTRUSO: Where Visions Unite!
-             {fullName}
-          </h1>
-        
-          <h2>
-          Join our vibrant community and turn dreams into reality. Let's make magic together! ✨
-          </h2> 
-          <div className='center-container'>
-            <Link href='/register' legacyBehavior>
-      
-
-              <a className='button1'>
-                <span></span> SIGNUP
-              </a>
-            </Link>
-          </div>
-          <div className='center-container'>
-            <Link href='/login' legacyBehavior>
-      
-
-              <a className='button1'>
-                <span></span> LOGIN
-              </a>
-            </Link>
-          </div>
+          <h1>Welcome to Altruso </h1>
+          <p>
+            Altruso: Crowdfunding with a Heart. <br/>
+            We're not just about design projects; we're on a mission to spark creativity and make
+            a positive impact. With Altruso, every campaign has the power to change lives, as a
+            portion of our funds go towards supporting meaningful charitable causes. Join us in
+            shaping a brighter future through design and compassion.
+          </p> 
+         
+          
+          {isLoggedIn && (
+            <div className='center-container'>
+              <Link href='/campaign' legacyBehavior>
+                <a className='button1'>
+                  <span></span> START A CAMPAIGN
+                </a>
+              </Link>
+            </div>
+          )}
+                  
         </div>
       </section>
     </>
   );
 };
 
-export default Index;
+export default home;
