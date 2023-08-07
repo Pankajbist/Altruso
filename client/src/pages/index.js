@@ -30,10 +30,19 @@ const home = () => {
             <div className='center-container'>
               <Link href='/campaign' legacyBehavior>
                 <a className='button1'>
-                  <span></span> START A CAMPAIGN
+                  <span></span> START CAMPAIGN NOW
                 </a>
               </Link>
-            </div>
+        
+             <div className='center-container'>
+             <Link href='/donate' legacyBehavior>
+               <a className='button1'>
+                 <span></span> START DONATION NOW
+               </a>
+             </Link>
+           </div>
+           
+           </div>
           )}
                   
         </div>

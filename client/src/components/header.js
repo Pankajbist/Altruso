@@ -3,7 +3,14 @@ import { useSelector , useDispatch} from 'react-redux';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { Avatar, Drawer, Button } from 'antd';
-import { LogoutOutlined, UserOutlined, SettingOutlined, QuestionCircleOutlined, MessageOutlined, DesktopOutlined } from '@ant-design/icons'; // Import icons
+import { 
+  LogoutOutlined, 
+  UserOutlined,
+   SettingOutlined, 
+   QuestionCircleOutlined,
+    MessageOutlined,
+     DesktopOutlined
+     } from '@ant-design/icons'; // Import icons
 import { CustomLogo } from './logo';
 import Image from 'next/image';
 import {handleLogout} from '../redux/reducerSlice/users'
@@ -58,7 +65,7 @@ export default function Header() {
           </a>
 
           <Drawer
-            title={<b style={{ fontSize: '1.5rem' }}>{"Edit_YourProfile"}</b>}
+            title={<b style={{ fontSize: '1.5rem' }}>{"Edit_Your_Profile"}</b>}
             placement="right"
             closable={true}
             onClose={hideDrawer}
@@ -66,7 +73,7 @@ export default function Header() {
             width={300}
           >
             <b style={{ color: 'aqua', fontSize: '1.5rem' }}>{` ${userDetails.fullName}`}</b>
-            <Link href="/profile">
+            <Link href="/settings">
   <p>
     <SettingOutlined /> <b>Settings & Privacy</b>
   </p>
