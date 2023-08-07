@@ -66,7 +66,11 @@ export default function Header() {
             width={300}
           >
             <b style={{ color: 'aqua', fontSize: '1.5rem' }}>{` ${userDetails.fullName}`}</b>
-            <p><SettingOutlined  /> <b>Settings & Privacy</b></p>
+            <Link href="/profile">
+  <p>
+    <SettingOutlined /> <b>Settings & Privacy</b>
+  </p>
+</Link>
             <p><QuestionCircleOutlined /> <b>Help & Support</b></p>
             <p><MessageOutlined /> <b>Give Feedback</b></p>
             <p><DesktopOutlined /> <b>Display & Accessibility</b></p>

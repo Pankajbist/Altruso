@@ -53,8 +53,9 @@ const Campaign = () => {
     return (
         <div className="Campaign">
             <div>
-                <h1 className="main-heading">Why Need Campaign?</h1>
-            </div>
+                <h1 className="Campaign">Why Need Campaign?</h1>
+            <h2>__________________________</h2>         
+               </div>
             <div className="card">
                 <div className="align-card">
                     <form onSubmit={handleFormSubmit}>
