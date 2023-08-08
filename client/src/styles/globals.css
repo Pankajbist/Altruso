@@ -316,7 +316,7 @@ footer {
   border-radius: 7px;
   border: white;
   outline: black;
-  background: black;
+
   font-size: 0.8rem;
   font-weight: 500;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -481,7 +481,7 @@ footer {
   width:20%;
   height:3px;
   text-align: center;
-  background-color: black;
+  background-color: aqua;
   display: block;
   margin: auto;
   margin-top:11px ;
@@ -578,7 +578,7 @@ footer {
   /* height: 40%; */
   font-size: 1.1rem;
   background: transparent;
-  border: 1px solid black;
+  border: 1px solid aqua;
   padding: 8px 10px;
   border-radius: 8px;
 }

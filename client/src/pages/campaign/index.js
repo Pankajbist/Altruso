@@ -11,8 +11,6 @@ const Campaign = () => {
     const [cause, setCause] = useState('');
     const [bankAccountHolder, setBankAccountHolder] = useState('');
     const [bankAccountNumber, setBankAccountNumber] = useState('');
-    const [ifscCode, setIfscCode] = useState('');
-    const [branch, setBranch] = useState('');
     const [estimatedAmount, setEstimatedAmount] = useState('');
 
 
@@ -38,7 +36,7 @@ const Campaign = () => {
             estimatedAmount: estimatedAmount
         };
 
-        const response = await fetch('http://localhost:4000/campaign', {
+        const response = await fetch('http://localhost:3000/campaign', {
             method: 'POST',
             body: JSON.stringify(formData),
             headers: {
@@ -62,6 +60,7 @@ const Campaign = () => {
                         <div className="nice-form-group">
                             <label>
                                 <h2>Full Name</h2>
+
                             </label>
                             <input
                                 type="text"
@@ -69,6 +68,7 @@ const Campaign = () => {
                                 value={username}
                                 onChange={(e) => setUserName(e.target.value)}
                             />
+
                         </div>
 
                         <div className="nice-form-group">
@@ -147,18 +147,18 @@ const Campaign = () => {
                         </div>
                         <div className="nice-form-group">
                             <label>
-                                <h2>Upload Proof</h2>
+                                <h2>Upload Proof why need campaign</h2>
                             </label>
                             <div className="proof">
-                                <h3> Certificate </h3>
+                                <h3> photo of campaigner </h3>
                                 <button>Upload</button>
                             </div>
                             <div className="proof">
-                                <h3>Prescription</h3>
+                                <h3>proof letter of relative sector</h3>
                                 <button><span></span>Upload</button>
                             </div>
                             <div className="proof">
-                                <h3>Others</h3>
+                                <h3>proof letter of amount</h3>
                                 <button><span></span>Upload</button>
                             </div>
                         </div>
@@ -176,19 +176,7 @@ const Campaign = () => {
                             />
                         </div>
 
-                        <div className="nice-form-group">
-                            <label>
-                                <h2>Supporting Documents</h2>
-                            </label>
-                            <div className="proof">
-                                <h3>Amount Proof</h3>
-                                <button>Upload</button>
-                            </div>
-                            <div className="proof">
-                                <h3>Pay Slip</h3>
-                                <button><span></span>Upload</button>
-                            </div>
-                        </div>
+                    
 
                         <div className="nice-form-group">
                             <button className="fundraiser">Start a Campaign Now</button>
