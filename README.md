@@ -169,8 +169,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ### Design & Development 
 - [X] I. Structure, Pages & Navigation 
     - [X] Home Page
-    - [ ] Project Details Page
-    - [ ] User Profile Page
+    - [X] Project Details Page
+    - [x] User Profile Page
     - [ ] Project Creation Page
     - [ ] Explore/Discover Projects Page
     - [ ] Category/Tags Pages
@@ -179,7 +179,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [X] User Authentication & Registration
 
 - [ ] II. Extra Features & Functionality:
-    - [ ] Social Media Sharing
+    - [X] Social Media Sharing
     - [ ] Commenting & Discussion on Projects
     - [ ] Real-time Project Updates
     - [ ] Project Backing and Pledging
