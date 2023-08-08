@@ -65,23 +65,24 @@ export default function Header() {
           </a>
 
           <Drawer
-            title={<b style={{ fontSize: '1.5rem' }}>{"Edit_Your_Profile"}</b>}
+            title={<b style={{  color: 'aqua',fontSize: '1.5rem' }}>{` ${userDetails.fullName}`}</b>}
             placement="right"
             closable={true}
             onClose={hideDrawer}
             visible={isDrawerVisible}
             width={300}
           >
-            <b style={{ color: 'aqua', fontSize: '1.5rem' }}>{` ${userDetails.fullName}`}</b>
+            <b style={{ fontSize: '1.5rem' }}>Your Profile</b>
             <Link href="/settings">
-  <p>
+  <p style={{color: "black"}}>
     <SettingOutlined /> <b>Settings & Privacy</b>
   </p>
 </Link>
-            <p><QuestionCircleOutlined /> <b>Help & Support</b></p>
+<Link href="/helpSupport">
+            <p><QuestionCircleOutlined /> <b>Help & Support</b></p></Link>
             <p><MessageOutlined /> <b>Give Feedback</b></p>
             <p><DesktopOutlined /> <b>Display & Accessibility</b></p>
-            <p onClick={userLogout}><LogoutOutlined /> <b>Logout</b></p>
+            <p onClick={userLogout}style={{ color: 'red' }}><LogoutOutlined /> <b>Logout</b></p>
           </Drawer>
        
             </div>  ) : (

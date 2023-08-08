@@ -11,6 +11,7 @@ function Donate() {
     window.open(whatsappLink);
   };
 
+  
   return (
     <>
       <h1 className="main-heading">Trending FundRaisers</h1>

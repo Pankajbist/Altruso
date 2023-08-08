@@ -131,49 +131,7 @@ ul.nav-menus{
   font-size: 50px;
   margin-top: 80px;
   }
-  button{
-    width: 200px;
-    padding: 15px 0;
-    text-align: center;
-    margin: 20px 10px;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid aqua;
-    background: transparent;
-    color:#f7f7f7;
-    cursor:pointer;
-    position:relative;
-    overflow:hidden;
-
-}
-span{
-  background:aqua;
-  height:100%;
-  width:0;
-  border-radius:25px;
-  position:absolute;
-  left:0;
-  bottom:0;
-  z-index:-1;
-  transition:0.5s;
-
-}
-button:hover span{
-  width: 100%;
-
-}
-button:hover{
-  border:none;
-}
-
-.app--login{
-  max-width: 100px;
-  margin:0 auto;
-}
-.app--login input + div{
-  color:red;
-}
-
+ 
 
 .button1{
   width: 200px;
@@ -190,25 +148,7 @@ button:hover{
   overflow:hidden;
 
 }
-span{
-background:aqua;
-height:100%;
-width:0;
-border-radius:25px;
-position:absolute;
-left:0;
-bottom:0;
-z-index:-1;
-transition:0.5s;
 
-}
-button:hover span{
-width: 100%;
-
-}
-button:hover{
-border:none;
-}
 
 /* In your CSS file */
 .button1 {
@@ -216,6 +156,9 @@ border:none;
   position: relative;
   overflow: hidden;
   padding: 12px 30px;
+  border-radius: 25px;
+  border: 2px solid aqua;
+  background: transparent;
   background-color: none; /* Default button color */
   color: #f7f7f7; /* Text color */
   text-decoration: none;
@@ -230,6 +173,7 @@ border:none;
   display: block;
   position: relative;
   z-index: -1;
+  border-radius:25px;
   transition: 1s;
 }
 
@@ -796,4 +740,3 @@ footer {
   outline: none;
   border-radius: 20px;
 }
-
