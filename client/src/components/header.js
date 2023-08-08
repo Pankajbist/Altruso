@@ -79,9 +79,9 @@ export default function Header() {
   </p>
 </Link>
 <Link href="/helpSupport">
-            <p><QuestionCircleOutlined /> <b>Help & Support</b></p></Link>
-            <p><MessageOutlined /> <b>Give Feedback</b></p>
-            <p><DesktopOutlined /> <b>Display & Accessibility</b></p>
+            <p  style={{color: "black"}}><QuestionCircleOutlined /> <b>Help & Support</b></p></Link>
+            <Link href="/feedback">    <p  style={{color: "black"}}><MessageOutlined /> <b>Give Feedback</b></p></Link>
+          
             <p onClick={userLogout}style={{ color: 'red' }}><LogoutOutlined /> <b>Logout</b></p>
           </Drawer>
        

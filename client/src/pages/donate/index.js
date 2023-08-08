@@ -65,7 +65,7 @@ function Donate() {
               <button className="whatsapp" onClick={handleWhatsAppPay}>
                 <div className="align-container2">
                   <img src="./whatsapp.png" alt="" />
-                 Whatsapp and Pay
+              Pay through whatsapp
                 </div>
               </button>
             </div>
