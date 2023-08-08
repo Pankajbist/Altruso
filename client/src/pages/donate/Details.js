@@ -24,64 +24,7 @@ const details=[
         personName:"Geeta Shah",
         fundDetails:"Rs 2,00,000 raised out of 8,00,000"
     },
-    {
-        key:2,
-        src:"./lady.avif",
-        alt:"leukemia patient",
-        heading:"My Mother suffers from severe leukemia.Urgent",
-        personName:"Name2",
-        fundDetails:"Rs 2,00,000 raised out of 8,00,000"
-    },
-    {
-        key:2,
-        src:"./lady.avif",
-        alt:"leukemia patient",
-        heading:"My Mother suffers from severe leukemia.Urgent",
-        personName:"Name2",
-        fundDetails:"Rs 2,00,000 raised out of 8,00,000"
-    }, {
-        key:2,
-        src:"./lady.avif",
-        alt:"leukemia patient",
-        heading:"My Mother suffers from severe leukemia.Urgent",
-        personName:"Name2",
-        fundDetails:"Rs 2,00,000 raised out of 8,00,000"
-    }, {
-        key:2,
-        src:"./lady.avif",
-        alt:"leukemia patient",
-        heading:"My Mother suffers from severe leukemia.Urgent",
-        personName:"Name2",
-        fundDetails:"Rs 2,00,000 raised out of 8,00,000"
-    }, {
-        key:2,
-        src:"./lady.avif",
-        alt:"leukemia patient",
-        heading:"My Mother suffers from severe leukemia.Urgent",
-        personName:"Name2",
-        fundDetails:"Rs 2,00,000 raised out of 8,00,000"
-    }, {
-        key:2,
-        src:"./lady.avif",
-        alt:"leukemia patient",
-        heading:"My Mother suffers from severe leukemia.Urgent",
-        personName:"Name2",
-        fundDetails:"Rs 2,00,000 raised out of 8,00,000"
-    }, {
-        key:2,
-        src:"./lady.avif",
-        alt:"leukemia patient",
-        heading:"My Mother suffers from severe leukemia.Urgent",
-        personName:"Name2",
-        fundDetails:"Rs 2,00,000 raised out of 8,00,000"
-    }, {
-        key:2,
-        src:"./lady.avif",
-        alt:"leukemia patient",
-        heading:"My Mother suffers from severe leukemia.Urgent",
-        personName:"Name2",
-        fundDetails:"Rs 2,00,000 raised out of 8,00,000"
-    },
+   
     {
         key:1,
         src:"./child.jpg",

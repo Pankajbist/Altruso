@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { setUserDetails } from '@/redux/reducerSlice/users';
+import { useDispatch, useSelector } from 'react-redux'
 
-import { Layout, Menu, Tabs, Avatar, Form, Input, Button, Switch } from 'antd';
+import { Layout, Menu, Tabs, Avatar, Form, Input, Button,Card, Switch } from 'antd';
 import {
   UserOutlined,
   LockOutlined,
@@ -11,16 +13,24 @@ const { Content, Sider } = Layout;
 const { TabPane } = Tabs;
 
 const SettingsPage = () => {
+  const { userDetails } = useSelector(state => state.users)
   const [activeTab, setActiveTab] = useState('personal');
   const [editProfile, setEditProfile] = useState(false);
   const [editPassword, setEditPassword] = useState(false);
   const [twoStepVerification, setTwoStepVerification] = useState(false);
 
-  const userDetails = {
-    fullName: 'John Doe',
-    email: 'johndoe@example.com',
-    phoneNumber: '123-456-7890',
-  };
+  <Card className="account--details"
+  title="Account Details"
+  extra={<span onClick={() => setIsAccountModalOpen(true)}>Edit Details</span>}
+  bordered={true}
+  style={{
+    width: '100%',
+  }}
+>
+  <p><span>Full Name: </span>{userDetails.fullName}</p>
+  <p><span>Email: </span>{userDetails.email}</p>
+  <p><span>Bank Account Number: </span>{userDetails.BankAccountNumber}</p>
+</Card>
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -65,11 +75,19 @@ const SettingsPage = () => {
         <Content  style={{ padding: '20px' }}>
           <Tabs  activeKey={activeTab}>
             <TabPane tab="Personal Details" key="personal">
-              <Avatar 
-                size={120}
-                icon={<UserOutlined />}
-                style={{ marginBottom: 20 }}
-              />
+             <Avatar
+              size={120}
+              style={{
+                backgroundColor: 'aqua',
+                color: '#f56a00',
+                marginTop: '3px',
+                fontSize: '5rem',
+                marginRight: '-5px',
+                textAlign: 'center',
+              }}
+            >
+              {userDetails.fullName[0]}
+            </Avatar>
               {editProfile ? (
                 <Form
                   labelCol={{ span: 8 }}
@@ -84,14 +102,18 @@ const SettingsPage = () => {
                   >
                     <Input />
                   </Form.Item>
-                  <Form.Item label="Email" name="email">
-                    <Input disabled />
+                  <Form.Item
+                    label="Email"
+                    name="email"
+                    rules={[{ required: true, message: 'Please enter your Email Address' }]}
+                  >
+                    <Input />
                   </Form.Item>
                   <Form.Item
-                    label="Phone Number"
-                    name="phoneNumber"
+                    label="BankAccountNumber"
+                    name="BankAccountNumber"
                     rules={[
-                      { required: true, message: 'Please enter your phone number' },
+                      { required: true, message: 'Please enter your BankAccountNumberr' },
                     ]}
                   >
                     <Input />
@@ -115,13 +137,29 @@ const SettingsPage = () => {
                     <strong>Email:</strong> {userDetails.email}
                   </p>
                   <p>
-                    <strong>Phone Number:</strong> {userDetails.phoneNumber}
+                    <strong>Bank Account Number:</strong> {userDetails.BankAccountNumber}
                   </p>
                   <Button onClick={handleEditProfile}>Edit</Button>
                 </>
               )}
             </TabPane>
             <TabPane tab="Privacy" key="privacy">
+            <Avatar
+              size={120}
+              style={{
+                backgroundColor: 'aqua',
+                color: '#f56a00',
+                marginTop: '3px',
+                fontSize: '5rem',
+                marginRight: '-5px',
+                textAlign: 'center',
+              }}
+            >
+              {userDetails.fullName[0]}
+            </Avatar>
+            <br></br>
+            <br></br>
+
               <Button onClick={handleEditPassword} style={{ marginBottom: 20 }}>
                 Change Password
               </Button>

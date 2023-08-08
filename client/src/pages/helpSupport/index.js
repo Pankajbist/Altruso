@@ -48,7 +48,7 @@ const HelpAndSupportPage = () => {
             to reach out directly to our support team. You can contact us via:
           </p>
           <ul>
-           
+          
             <li>Email: <a href="mailto:altrusocrowdfunding@gmail.com">altrusocrowdfunding@gmail.com</a></li>
             <li>Phone: <a href="tel:01524684">Call Now</a></li>
           </ul>
