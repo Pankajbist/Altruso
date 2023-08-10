@@ -9,6 +9,8 @@ const Campaign = () => {
     const [state, setState] = useState('');
     const [nationality, setNationality] = useState('');
     const [cause, setCause] = useState('');
+    const [ifscCode, setIfscCode] = useState('');
+    const [branch, setBranch] = useState('');
     const [bankAccountHolder, setBankAccountHolder] = useState('');
     const [bankAccountNumber, setBankAccountNumber] = useState('');
     const [estimatedAmount, setEstimatedAmount] = useState('');
