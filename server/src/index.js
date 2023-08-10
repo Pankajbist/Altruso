@@ -3,15 +3,19 @@ require('dotenv').config()
 const connection = require('./db/connection')
 
 const cors = require('cors')
-const userRoute=require('../src/routes/user')
+const userRoute = require('./routes/user')
+const campaignRoute=require('./routes/campaigns')
 connection()
 const app = express()
 app.use(cors())
-const port = process.env.PORT
+const port = process.env.PORT || 4000
 app.use(express.json())
+app.use("/", userRoute)
+app.use("/",campaignRoute)
 
-app.use("/",userRoute)
 
- app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-  })
+
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})

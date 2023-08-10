@@ -1,192 +1,213 @@
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
+import { Layout, Button, theme } from 'antd';
+
+const { Content } = Layout;
+
 const Campaign = () => {
-    const Router = useRouter();
-    const [username, setUserName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [address, setAddress] = useState('');
-    const [state, setState] = useState('');
-    const [nationality, setNationality] = useState('');
-    const [cause, setCause] = useState('');
-    const [ifscCode, setIfscCode] = useState('');
-    const [branch, setBranch] = useState('');
-    const [bankAccountHolder, setBankAccountHolder] = useState('');
-    const [bankAccountNumber, setBankAccountNumber] = useState('');
-    const [estimatedAmount, setEstimatedAmount] = useState('');
+    const [file, setFile] = useState(null);
 
+    const handleFormSubmit = async (values) => {
+        const data = new FormData();
 
-    const handleFormSubmit = async (e) => {
-        e.preventDefault();
+        Object.entries(values).forEach((item) => {
+            data.append(item[0], item[1]);
+        });
+        data.append('campaigns', file);
 
-        const formData = {
-            username: username,
-            email: email,
-            phoneNumber: phoneNumber,
-            address: address,
-            state: state,
-
-
-
-            // 
-            nationality: nationality,
-            cause: cause,
-            bankAccountHolder: bankAccountHolder,
-            bankAccountNumber: bankAccountNumber,
-            ifscCode: ifscCode,
-            branch: branch,
-            estimatedAmount: estimatedAmount
-        };
-
-        const response = await fetch('http://localhost:3000/campaign', {
+        fetch('http://localhost:4000/campaigns', {
             method: 'POST',
-            body: JSON.stringify(formData),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            body: data,
         });
 
-        console.log(formData);
-
+        
     };
 
+    const {
+        token: { colorBgContainer },
+    } = theme.useToken();
+
     return (
-        <div className="Campaign">
-            <div>
-                <h1 className="Campaign">Why Need Campaign?</h1>
-            <h2>__________________________</h2>         
-               </div>
-            <div className="card">
-                <div className="align-card">
-                    <form onSubmit={handleFormSubmit}>
-                        <div className="nice-form-group">
+        <Layout>
+            <Content style={{ padding: 24, minHeight: 585, background: colorBgContainer }}>
+                <div className="campaign">
+                    <h1 className="main-heading">Start a Campaign</h1>
+                    <Formik
+                        initialValues={{
+                            username: '',
+                            email: '',
+                            phoneNumber: '',
+                            address: '',
+                            state: '',
+                            nationality: '',
+                            cause: '',
+                            bankAccountHolder: '', 
+                            bankAccountNumber: '', 
+                            swiftCode: '', 
+                            branch: '', 
+                            estimatedAmount: '',
+                        }}
+                        validationSchema={Yup.object({
+                            
+                        })}
+                        onSubmit={(values) => {
+                            handleFormSubmit(values);
+                        }}
+                    >
+                        {({ errors, touched }) => (
+                            <Form>
+                            <div className="nice-form-group">
                             <label>
                                 <h2>Full Name</h2>
 
                             </label>
-                            <input
-                                type="text"
-                                placeholder="Your name"
-                                value={username}
-                                onChange={(e) => setUserName(e.target.value)}
-                            />
-
-                        </div>
-
-                        <div className="nice-form-group">
-                            <label>
+                                <Field placeholder="Full Name" name="username" />
+                                {errors.username && touched.username ? (
+                                    <div>{errors.username}</div>
+                                ) : null}
+                                <br />
+                                <label>
                                 <h2>Email</h2>
-                            </label>
-                            <input
-                                type="email"
-                                placeholder="Email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                        </div>
 
-                        <div className="nice-form-group">
-                            <label>
+                            </label>
+                                <Field placeholder="Email" name="email" />
+                                {errors.email && touched.email ? (
+                                    <div>{errors.email}</div>
+                                ) : null}
+                                <br />
+                                <label>
                                 <h2>Phone Number</h2>
+
                             </label>
-                            <input
-                                type="tel"
-                                name="phoneNumber"
-                                placeholder="Your phone number"
-                                value={phoneNumber}
-                                onChange={(e) => setPhoneNumber(e.target.value)}
-                            />
-                        </div>
-                        <div className="nice-form-group">
-                            <label>
-                                <h2>Address</h2>
+                                <Field placeholder="Phone Number" name="phoneNumber" />
+                                {errors.phoneNumber && touched.phoneNumber ? (
+                                    <div>{errors.phoneNumber}</div>
+                                ) : null}
+                                <br /> 
+                                 <label>
+                                <h2>Current Address</h2>
+
                             </label>
-                            <textarea
-                                type="text"
-                                name="address"
-                                placeholder="Your full address"
-                                value={address}
-                                onChange={(e) => setAddress(e.target.value)}
-                                rows={2}
-                            />
-                        </div>
-                        <div className="nice-form-group">
-                            <label>
+                                <Field placeholder="Current Address" name="address" />
+                                {errors.address && touched.address ? (
+                                    <div>{errors.address}</div>
+                                ) : null}
+                                <br />
+                                <label>
+                                <h2>Permanent Address</h2>
+
+                            </label>
+                                <Field placeholder="Permanent Address" name="address" />
+                                {errors.address && touched.address ? (
+                                    <div>{errors.address}</div>
+                                ) : null}
+                                <br />
+                                <label>
                                 <h2>State</h2>
+
                             </label>
-                            <input
-                                type="text"
-                                name="state"
-                                placeholder="Enter state"
-                                value={state}
-                                onChange={(e) => setState(e.target.value)}
-                            />
-                        </div>
-                        <div className="nice-form-group">
-                            <label>
+                                <Field placeholder="State" name="state" />
+                                {errors.state && touched.state ? (
+                                    <div>{errors.state}</div>
+                                ) : null}
+                                <br />
+                                <label>
                                 <h2>Nationality</h2>
+
                             </label>
-                            <input
-                                type="text"
-                                name="nationality"
-                                placeholder="Enter nationality"
-                                value={nationality}
-                                onChange={(e) => setNationality(e.target.value)}
-                            />
-                        </div>
-                        <div className="nice-form-group">
-                            <label>
+                                <Field placeholder="Nationality" name="nationality" />
+                                {errors.nationality && touched.nationality ? (
+                                    <div>{errors.nationality}</div>
+                                ) : null}
+                                <br />
+                                <label>
+                                <h2>Bank Account Holder</h2>
+
+                            </label>
+                                <Field placeholder="Bank Account Holder" name="bankAccountHolder" />
+                                    {errors.bankAccountHolder && touched.bankAccountHolder ? (
+                                        <div>{errors.bankAccountHolder}</div>
+                                    ) : null}
+                                    <br />
+                                    <label>
+                                <h2>Bank Account Number</h2>
+
+                            </label>
+                                    <Field placeholder="Bank Account Number" name="bankAccountNumber" />
+                                    {errors.bankAccountNumber && touched.bankAccountNumber ? (
+                                        <div>{errors.bankAccountNumber}</div>
+                                    ) : null}
+                                    <br />
+                                    <label>
+                                <h2>SWIFT Code</h2>
+
+                            </label>
+                                    <Field placeholder="SWIFT Code" name="swiftCode" />
+                                    {errors.swiftCode && touched.swiftCode ? (
+                                        <div>{errors.swiftCode}</div>
+                                    ) : null}
+                                    <br />
+                                    <label>
+                                <h2>Branch</h2>
+
+                            </label>
+                                    <Field placeholder="Branch" name="branch" />
+                                    {errors.branch && touched.branch ? (
+                                        <div>{errors.branch}</div>
+                                    ) : null}
+                                    <br/>
+                                <label>
+                                    
                                 <h2>Enter Your Cause</h2>
                             </label>
-                            <textarea
-                                type="text"
-                                name="cause"
-                                placeholder="Start typing..."
-                                value={cause}
-                                onChange={(e) => setCause(e.target.value)}
-                                rows={6}
-                            />
-                        </div>
-                        <div className="nice-form-group">
-                            <label>
-                                <h2>Upload Proof why need campaign</h2>
-                            </label>
-                            <div className="proof">
-                                <h3> photo of campaigner </h3>
-                                <button>Upload</button>
-                            </div>
-                            <div className="proof">
-                                <h3>proof letter of relative sector</h3>
-                                <button><span></span>Upload</button>
-                            </div>
-                            <div className="proof">
-                                <h3>proof letter of amount</h3>
-                                <button><span></span>Upload</button>
-                            </div>
-                        </div>
-                
-                        <div className="nice-form-group">
-                            <label>
+                                <Field
+                                    placeholder="Start typing ..."
+                                    name="cause"
+                                    component="textarea"
+                                />
+                                {errors.cause && touched.cause ? (
+                                    <div>{errors.cause}</div>
+                                ) : null}
+                                <br />
+                                <label>
+                                <label>
                                 <h2>Estimated amount</h2>
                             </label>
-                            <input
-                                type="text"
-                                name="estimatedAmount"
-                                placeholder="Enter estimated amount in Rs"
-                                value={estimatedAmount}
-                                onChange={(e) => setEstimatedAmount(e.target.value)}
-                            />
+                                <Field placeholder="Estimated Amount" name="estimatedAmount" />
+                                {errors.estimatedAmount && touched.estimatedAmount ? (
+                                    <div>{errors.estimatedAmount}</div>
+                                ) : null}
+                                <br />
+                                <br/>   
+                                <h2 style={{color:'black',textAlign:'center'}}><b>Upload Proof</b> </h2>
+                            </label>
+                            <br/> 
+                            <label>
+                                <h2>Upload Photo of Campaigner </h2>
+                            </label>
+                        
+                                <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+                        
+                                <label>
+                                <h2>Upload Proof Letter Of Relative Sector </h2>
+                            </label>
+                                <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+                                <label>
+                                <h2>Upload Proof Letter Of Estimated Amount</h2>
+                            </label>
+                                <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+                               
+                                <div className="nice-form-group">
+                            <button className="fundraiser"><b>Start a Campaign Now</b></button>
                         </div>
-
-                    
-
-                        <div className="nice-form-group">
-                            <button className="fundraiser">Start a Campaign Now</button>
-                        </div>
-                    </form>
+                            </div>
+                        </Form>
+                        )}
+                    </Formik>
                 </div>
-            </div>
-        </div>
+            </Content>
+        </Layout>
     );
 };
 

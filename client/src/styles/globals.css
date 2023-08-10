@@ -341,8 +341,8 @@ footer {
   margin: 10px auto;
   padding: 10px 20px;
   font-size: 1.4rem;
-  color: aqua;
-  background:black;
+  color: #000000;
+  background:aqua;
   box-shadow: 0 4px 8px #01bfbd4d;
   border: none;
   opacity: 0.8;
@@ -739,14 +739,4 @@ footer {
   border:none;
   outline: none;
   border-radius: 20px;
-}
-/* PROFILE PAGE */
-.user--profile{
-  padding:40px 0;
-}
-.user--profile .account--details p span{
-  font-weight: bold;
-}
-.user--profile .account--details{
-  margin-bottom: 20px;
 }

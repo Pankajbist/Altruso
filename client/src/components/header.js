@@ -65,7 +65,7 @@ export default function Header() {
           </a>
 
           <Drawer
-            title={<b style={{  color: 'aqua',fontSize: '1.5rem' }}>{` ${userDetails.fullName}`}</b>}
+            title={<b style={{  color: 'aqua',fontSize: '1.5rem' }}>  {` ${  userDetails.fullName}`}</b>}
             placement="right"
             closable={true}
             onClose={hideDrawer}
@@ -84,7 +84,7 @@ export default function Header() {
           
             <p onClick={userLogout}style={{ color: 'red' }}><LogoutOutlined /> <b>Logout</b></p>
           </Drawer>
-       
+         
             </div>  ) : (
         
         <ul className="nav-menus">
