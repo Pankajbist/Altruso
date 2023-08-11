@@ -183,18 +183,20 @@ const Campaign = () => {
                                 <h2 style={{color:'black',textAlign:'center'}}><b>Upload Proof</b> </h2>
                             </label>
                             <br/> 
-                            <label>
-                                <h2>Upload Photo of Campaigner </h2>
-                            </label>
-                        
-                                <input type="file" onChange={(e) => setFile(e.target.files[0])} />
-                        
+                         
                                 <label>
-                                <h2>Upload Proof Letter Of Relative Sector </h2>
-                            </label>
-                                <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+                                <h2>Write Proof Letter Of Relative Sector </h2>
+                            </label> <Field
+                                    placeholder="Start typing ..."
+                                    name="cause"
+                                    component="textarea"
+                                />
+                                {errors.cause && touched.cause ? (
+                                    <div>{errors.cause}</div>
+                                ) : null}
+                                <br />
                                 <label>
-                                <h2>Upload Proof Letter Of Estimated Amount</h2>
+                                <h2>Upload Photo of Campaigner</h2>
                             </label>
                                 <input type="file" onChange={(e) => setFile(e.target.files[0])} />
                                

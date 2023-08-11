@@ -11,7 +11,10 @@ const campaignSchema = new mongoose.Schema({
                             bankAccountNumber: {type:String, required: true}, 
                             swiftCode: {type:String, required: true}, 
                             branch: {type:String, required: true}, 
-                            estimatedAmount: {type:String, required: true}
+                            estimatedAmount: {type:String, required: true},
+                            campaignImage: {type:String, required: true},
+                            campaignImage: {type:String, required: true},
+                            campaignImage: {type:String, required: true}
   });
   
   const campaign = mongoose.model('campaign', campaignSchema);

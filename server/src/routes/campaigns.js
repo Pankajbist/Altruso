@@ -14,11 +14,10 @@ const storage = multer.diskStorage({
   })
   
   const upload = multer({ storage: storage })
-// router.get('/phone-available/:phoneNumber',UsersController.checkIfUserExists )
+
 
 router.get('/campaign-img/:id', campaignsController.getcampaignImageById)
 router.post("/campaigns", upload.single('campaigns'), campaignsController.addNewcampaigns)
-
 router.get('/campaigns',campaignsController.getAllcampaigns)
 
 module.exports=router;
