@@ -22,7 +22,7 @@ const getAllcampaigns = async(req,res)=>{
   const getcampaignImageById = async(req,res)=> {
     const data =  await campaigns.findById(req.params.id)
     const imageDir = path.join(__dirname,'../../','uploads/'+data.campaignImage) 
-    const defaultDir = path.join(__dirname,'../../','uploads/userAvatar/nobike.jpeg') 
+    const defaultDir = path.join(__dirname,'../../','uploads/uploads/child.jpg') 
 
     if(fs.existsSync( imageDir )){
         res.sendFile(imageDir)

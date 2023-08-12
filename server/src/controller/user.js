@@ -2,6 +2,8 @@ const Users = require('../models/users')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const saltRounds = 10
+const path= require('path')
+const fs =require('fs')
 
     const registerUser=  async(req, res) => {
         try{
@@ -37,6 +39,19 @@ const saltRounds = 10
         }
       
     }
+    
+const getAllUsers = async (req, res) => {
+
+    const data = await Users.find().limit(req.query.size).skip((req.query.page - 1)* req.query.size )
+    const count = await Users.find().count()
+    if(data){
+        res.json({
+            userList: data,
+            count:count
+        })
+    }
+        
+    }
     const loginUser = async (req, res) => {
         try {
             const data = await Users.findOne({ BankAccountNumber: req.body.BankAccountNumber })
@@ -67,5 +82,4 @@ const saltRounds = 10
     
     }
     
-    module.exports = { registerUser, loginUser }
-
+    module.exports = { registerUser, loginUser,getAllUsers }

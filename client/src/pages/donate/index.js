@@ -1,79 +1,67 @@
-import React from "react";
-import Card from "./Card";
-import details from "./Details";
+import React, { useEffect, useState } from 'react';
+import Header from '../../components/header';
+import Image from 'next/image';
+// ... Import statements and Header component
 
-function Donate() {
-  const handleWhatsAppPay = () => {
-    const stripeLink = "";
-    const message = `Hey, I want to make a payment. Here's the link: ${stripeLink}`;
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappLink = `https://wa.me/?text=${encodedMessage}`;
-    window.open(whatsappLink);
+function Index() {
+  const [campaigns, setCampaigns] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const fetchCampaigns = async () => {
+    try {
+      const res = await fetch('http://localhost:4000/campaigns');
+      const { data } = await res.json();
+
+      const campaignsWithFullImageURL = data.map((item) => ({
+        ...item,
+        campaignImage: 'http://localhost:4000/campaign-img/' + item._id,
+      }));
+
+      setCampaigns(campaignsWithFullImageURL);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching campaigns:', error);
+      setLoading(false);
+    }
   };
 
-  
+  useEffect(() => {
+    fetchCampaigns();
+  }, []);
+
   return (
     <>
-      <h1 className="main-heading">Trending FundRaisers</h1>
-      <div className="Cards">
-        {details.map((item) => (
-          <Card
-            key={item.key}
-            src={item.src}
-            alt={item.alt}
-            heading={item.heading}
-            personname={item.personName}
-            funddetails={item.fundDetails}
-          />
-        ))}
-      </div>
-
-      <section className="donate-relative">
-        <h1 className="main-heading">Donate Someone You Know!</h1>
-
-        <div className="form">
-          <div className="search">
-            <input type="text" placeholder="Search user.." />
-            <i className="fa-solid fa-magnifying-glass"></i>
-          </div>
-          <input type="text" placeholder="Selected User" readOnly />
-          <div className="details">
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
-          </div>
-          <div className="details">
-            <input type="email" placeholder="Email Id" />
-            <input type="tel" placeholder="Mobile Number" />
-          </div>
-          <div className="details">
-            <input type="text" placeholder="State" />
-            <input type="text" placeholder="Country" />
-          </div>
-
-          <div className="payment-options">
-            <div className="container1">
-              <a
-                href=""
-                target="_blank"
-                rel="noopener noreferrer"
-                className="make-payment"
-              >
-                Make Payment
-              </a>
-            </div>
-            <div className="container2">
-              <button className="whatsapp" onClick={handleWhatsAppPay}>
-                <div className="align-container2">
-                  <img src="./whatsapp.png" alt="" />
-              Pay through whatsapp
+      <Header />
+      <div>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          campaigns.length > 0 ? (
+            <div>
+              {campaigns.map((item) => (
+                <div className='card' key={item._id}>
+                  <Image
+                    src={item.campaignImage}
+                    alt='Campaign Image'
+                    width={50}
+                    height={60}
+                  />
+                  <div>
+                    <p>Name: {item.campaignsName}</p>
+                    <p>Price: {item.campaignsPrice}</p>
+                    <p>Category: {item.category}</p>
+                    <p>Description: {item.campaignsDescription}</p>
+                  </div>
                 </div>
-              </button>
+              ))}
             </div>
-          </div>
-        </div>
-      </section>
+          ) : (
+            <p>No campaigns available.</p>
+          )
+        )}
+      </div>
     </>
   );
 }
 
-export default Donate;
+export default Index;
