@@ -16,7 +16,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <img src="Altrusologo.png" alt="Logo" width="120" height="90">
+  <img src="Altruso-logo.png" alt="Logo" width="120" height="90">
   </a>
 
 
