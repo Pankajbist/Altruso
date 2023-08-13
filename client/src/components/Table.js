@@ -8,10 +8,7 @@ const columns = [
     dataIndex: 'fullName',
     render: (text) => <a>{text}</a>,
   },
-  {
-    title: 'Phone Number',
-    dataIndex: 'phoneNumber',
-  },
+ 
   {
     title: 'Email',
     dataIndex: 'email',
@@ -20,18 +17,7 @@ const columns = [
     title: 'Mode',
     dataIndex: 'mode',
   },
-  {
-    title:'License Number',
-    dataIndex: 'licenseNumber',
-  },
-  {
-    title: 'Verified',
-    dataIndex: 'verified',
-    render: (value)=>{
-    console.log(value,"@@@")
-    return <Switch defaultChecked={value} onChange={null} />}
-  },
-
+ 
 ];
 
 

@@ -52,6 +52,7 @@ const getAllUsers = async (req, res) => {
     }
         
     }
+
     const loginUser = async (req, res) => {
         try {
             const data = await Users.findOne({ BankAccountNumber: req.body.BankAccountNumber })
