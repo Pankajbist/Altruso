@@ -88,7 +88,7 @@ Join Altruso today and embark on an extraordinary journey of giving, innovation,
 -   [![Next][Next.js]][Next-url]
 - ![JavaScript]
 - ![Redux]
-- ![Axios]
+
 - ![Git]
 - ![ESLint]
 - ![npm]
@@ -186,10 +186,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [ ] User Dashboard with Backed Projects
     - [ ] Notifications & Email Alerts
     - [ ] Progress Tracking & Goal Achievement
-    - [ ] User Settings & Preferences
-    - [ ] User Payment Management
+    - [X] User Settings & Preferences
+    - [X] User Payment Management
     - [ ]  Project Owner Updates and Communication
-    - [ ] User Ratings & Reviews for Projects
+    - [X] User Ratings & Reviews for Projects
     - [ ] Project Update Logs
     - [ ] Estimated Delivery Dates for Backers
 
@@ -210,8 +210,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [ ] Track Project Progress and Funding
 
 - [ ] IV. Payment Processing Integration
-    -  [ ] Integrate Payment Gateway for Secure Transactions
-    - [ ] Handle Payment Verification and Error Handling
+    -  [X] Integrate Payment Gateway for Secure Transactions
+    - [X] Handle Payment Verification and Error Handling
 
 - [ ] V. Notifications & Emails
     - [ ] Set Up Notifications for Backers and Project Owners
