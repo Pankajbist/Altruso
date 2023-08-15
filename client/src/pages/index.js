@@ -2,6 +2,9 @@
 import React from 'react';
 import Link from 'next/link';
 import Header from '../components/header';
+import About from '../components/About';
+import Contact from '../components/Contact';
+import Feedback from '../components/Feedback';
 import Heroimg from '../../public/Altruso-background.jpg';
 import { useSelector } from'react-redux';
 
@@ -12,6 +15,7 @@ const home = () => {
   return (
     <>
       <Header />
+  
       <section
         className='hero'
         style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),url(${Heroimg.src})`}}>
@@ -44,10 +48,13 @@ const home = () => {
            </div>
            
            </div>
+           
           )}
                   
         </div>
       </section>
+      <About/>
+      <Contact/>
     </>
   );
 };
