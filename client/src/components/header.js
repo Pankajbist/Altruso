@@ -9,7 +9,7 @@ import {
    SettingOutlined, 
    QuestionCircleOutlined,
     MessageOutlined,
-     DesktopOutlined
+    QuestionOutlined 
      } from '@ant-design/icons'; // Import icons
 import { CustomLogo } from './logo';
 import Image from 'next/image';
@@ -60,12 +60,12 @@ export default function Header() {
                 textAlign: 'center',
               }}
             >
-              {userDetails.fullName[0]}
+              {userDetails?.fullName?.[0]}
             </Avatar>
           </a>
 
           <Drawer
-            title={<b style={{  color: 'aqua',fontSize: '1.5rem' }}>  {` ${  userDetails.fullName}`}</b>}
+            title={<b style={{  color: 'aqua',fontSize: '1.5rem' }}>  {` ${  userDetails?.fullName}`}</b>}
             placement="right"
             closable={true}
             onClose={hideDrawer}
@@ -81,7 +81,7 @@ export default function Header() {
 <Link href="/helpSupport">
             <p  style={{color: "black"}}><QuestionCircleOutlined /> <b>Help & Support</b></p></Link>
             <Link href="/feedback">    <p  style={{color: "black"}}><MessageOutlined /> <b>Give Feedback</b></p></Link>
-          
+            <Link href="/About">    <p  style={{color: "black"}}><QuestionOutlined /> <b>Who We Are</b></p></Link>
             <p onClick={userLogout}style={{ color: 'red' }}><LogoutOutlined /> <b>Logout</b></p>
           </Drawer>
          

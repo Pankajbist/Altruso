@@ -30,9 +30,8 @@ const Campaign = () => {
 
     return (
         <Layout>
-            <Content style={{ padding: 24, minHeight: 585, background: colorBgContainer }}>
-                <div className="campaign">
-                    <h1 className="main-heading">Start a Campaign</h1>
+             <h1 style={{ textAlign:"center"}}>Start a Campaign</h1>
+      <h2 style={{ textAlign:"center", color:"aqua"}}>___________________________</h2>
                     <Formik
                         initialValues={{
                             username: '',
@@ -207,8 +206,8 @@ const Campaign = () => {
                         </Form>
                         )}
                     </Formik>
-                </div>
-            </Content>
+              
+        
         </Layout>
     );
 };

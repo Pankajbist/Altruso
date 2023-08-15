@@ -27,9 +27,9 @@ const SettingsPage = () => {
     width: '100%',
   }}
 >
-  <p><span>Full Name: </span>{userDetails.fullName}</p>
-  <p><span>Email: </span>{userDetails.email}</p>
-  <p><span>Bank Account Number: </span>{userDetails.BankAccountNumber}</p>
+  <p><span>Full Name: </span>{userDetails?.fullName}</p>
+  <p><span>Email: </span>{userDetails?.email}</p>
+  <p><span>Bank Account Number: </span>{userDetails?.BankAccountNumber}</p>
 </Card>
 
   const handleTabChange = (tab) => {

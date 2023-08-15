@@ -5,6 +5,7 @@ import Header from '../../components/header';
 import Image from 'next/image';
 
 const Index = () => {
+  const stripeLink = "https://buy.stripe.com/test_14k03h5A80bVgJq4gg";
   const [campaigns, setCampaigns] = useState([]);
   const [loading, setLoading] = useState(true);
   const [modalVisible, setModalVisible] = useState(false);
@@ -79,13 +80,15 @@ const Index = () => {
                   />
                   <div className="campaign-details">
                     <p className="campaign-name">{item.campaignsName}</p>
-                    <p>Username: {item.username}</p>
+                    <p>Name: {item.username}</p>
                     <p>Email: {item.email}</p>
                     <p>Cause: {item.cause}</p>
                     <div className="buttons">
                       <button  className="donate-button"  onClick={() => showModal(item)}>Details</button>
-                      <button  className="donate-button"  onClick={showDonateModal}>Donate Now
-          </button>
+                      
+          <button className="donate-button" onClick={() => window.location.href = "https://buy.stripe.com/test_14k03h5A80bVgJq4gg"}>
+                        Donate
+                    </button>
                     </div>
                   </div>
                 </div>
@@ -117,11 +120,10 @@ const Index = () => {
                     width={100}
                     height={100}
                   />
-            <p>Campaign Name: {selectedCampaign.campaignsName}</p>
-            <p>Username: {selectedCampaign.username}</p>
-            <p>Email: {selectedCampaign.email}</p>
-            <p>Username: {selectedCampaign.username}</p>
-<p>Email: {selectedCampaign.email}</p>
+           
+            <p>Name: {selectedCampaign.username}</p>
+             <p>Email: {selectedCampaign.email}</p>
+           
 <p>Phone Number: {selectedCampaign.phoneNumber}</p>
 <p>Address: {selectedCampaign.address}</p>
 <p>State: {selectedCampaign.state}</p>
@@ -136,48 +138,7 @@ const Index = () => {
           </div>
         )}
       </Modal>
-      <Modal
- 
-        visible={donateModalVisible}
-        onCancel={hideDonateModal}
-        footer={[
-          <button className='button2' key="close" onClick={hideDonateModal}>
-            Close
-          </button>,
-           <button className='button2' key="ok" onClick={hideDonateModal}>
-           OK
-         </button>,
-        ]}
-      >
-        <h1>Donate</h1>
-        <hr />
-        <div className="secure-payment-page">
-          <h2>Secure Payment Page</h2>
-          <p>
-            Ready to complete your purchase? Please provide the following information to process your payment:
-          </p>
-        
-            <div className="nice-form-group">
-              <p>Cardholder's Name:<input type="text" placeholder="Your Name" /></p>
-              <p>Card Number: <input type="text" placeholder="Card Number" /></p>
-              <p>Expiry Date: <input type="text" placeholder="MM/YY" /></p>
-              <p>CVV/CVC: <input type="text" placeholder="3 or 4-digit Security Code" /></p>
-            </div>
-            <p><b>Billing Address:</b></p>
-            <div className="nice-form-group">
-              <p>Full Address: <input type="text" placeholder="Full Address" /></p>
-              <p>City: <input type="text" placeholder="City" /></p>
-              <p>State: <input type="text" placeholder="State" /></p>
-              <p>ZIP Code: <input type="text" placeholder="ZIP Code" /></p>
-            </div>
-          </div>
-          <button className='fundraiser'  key="close" onClick={hideDonateModal} >Pay Now</button>
-          <p>
-            By clicking 'Pay Now', you confirm that you've read and agreed to our Terms of Service and Privacy Policy. Your payment details are securely processed using industry-standard encryption.
-          </p>
-        
-       
-      </Modal>
+    
     </>
   );
 };
