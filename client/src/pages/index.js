@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Header from '../components/header';
 import About from '../components/About';
 import Contact from '../components/Contact';
-import Feedback from '../components/Feedback';
+
 import Heroimg from '../../public/Altruso-background.jpg';
 import { useSelector } from'react-redux';
 

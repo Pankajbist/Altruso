@@ -22,7 +22,11 @@ Feel free to get in touch with us at Altruso! We're here to help with any inquir
               <p className={styles.inpara}>
                 Feel free to contact us in case of any queries
               </p>
-             
+              <ul>
+          
+          <li>Email: <a href="mailto:altrusocrowdfunding@gmail.com">altrusocrowdfunding@gmail.com</a></li>
+          <li>Phone: <a href="tel:01524684">Call Now</a></li>
+        </ul>
             </div>
           </div>
         </div>

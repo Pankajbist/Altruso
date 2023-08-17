@@ -16,7 +16,7 @@ const Campaign = () => {
         });
         data.append('campaigns', file);
 
-        fetch('http://localhost:4000/campaigns', {
+        fetch('http//localhost:4000/campaigns', {
             method: 'POST',
             body: data,
         });
