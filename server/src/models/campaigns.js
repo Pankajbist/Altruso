@@ -17,5 +17,5 @@ const campaignSchema = new mongoose.Schema({
                             campaignImage: {type:String, required: true}
   });
   
-  const campaign = mongoose.model('campaign', campaignSchema);
-  module.exports = campaign
+  const campaigns = mongoose.model('campaigns', campaignSchema);
+  module.exports = campaigns

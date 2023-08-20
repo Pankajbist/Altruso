@@ -1,13 +1,9 @@
 import React from "react";
 import styles from "../styles/contactUs.module.css";
-import Heroimg from "../../public/about-us-background.jpg";
 
 const AboutUs = () => {
   return (
     <React.Fragment>
-       <section
-        className='hero'
-         style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(${Heroimg.src})`}}>
     
       <div className={styles.container}>
         <h1 className={styles.header}>CONTACT US</h1>
@@ -35,7 +31,6 @@ Feel free to get in touch with us at Altruso! We're here to help with any inquir
           </div>
         </div>
       </div>
-      </section>
     </React.Fragment>
   );
 };

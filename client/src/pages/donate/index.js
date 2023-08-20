@@ -124,16 +124,15 @@ const Index = () => {
            
             <p>Name: {selectedCampaign.username}</p>
              <p>Email: {selectedCampaign.email}</p>
-           
-<p>Phone Number: {selectedCampaign.phoneNumber}</p>
-<p>Address: {selectedCampaign.address}</p>
-<p>State: {selectedCampaign.state}</p>
-<p>Nationality: {selectedCampaign.nationality}</p>
-<p>Cause: {selectedCampaign.cause}</p>
-<p>Bank Account Holder: {selectedCampaign.bankAccountHolder}</p>
-<p>Bank Account Number: {selectedCampaign.bankAccountNumber}</p>
-<p>Swift Code: {selectedCampaign.swiftCode}</p>
-<p>Branch: {selectedCampaign.branch}</p>
+            <p>Phone Number: {selectedCampaign.phoneNumber}</p>
+            <p>Address: {selectedCampaign.address}</p>
+            <p>State: {selectedCampaign.state}</p>
+            <p>Nationality: {selectedCampaign.nationality}</p>
+            <p>Cause: {selectedCampaign.cause}</p>
+            <p>Bank Account Holder: {selectedCampaign.bankAccountHolder}</p>
+            <p>Bank Account Number: {selectedCampaign.bankAccountNumber}</p>
+            <p>Swift Code: {selectedCampaign.swiftCode}</p>
+            <p>Branch: {selectedCampaign.branch}</p>
 <p>Estimated Amount: {selectedCampaign.estimatedAmount}</p>
  
           </div>
