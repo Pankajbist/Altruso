@@ -83,6 +83,7 @@ const Index = () => {
                     <p>Name: {item.username}</p>
                     <p>Email: {item.email}</p>
                     <p>Cause: {item.cause}</p>
+                    <p> {item.estimatedAmount} Amount Left </p>
                     <div className="buttons">
                       <button  className="donate-button"  onClick={() => showModal(item)}>Details</button>
                       

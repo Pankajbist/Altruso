@@ -18,7 +18,7 @@ const home = () => {
   
       <section
         className='hero'
-        style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),url(${Heroimg.src})`}}>
+        style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${Heroimg.src})`}}>
         <div className='content'>
           <h1>Welcome to Altruso </h1>
           <h3>

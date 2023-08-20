@@ -11,11 +11,11 @@ const WhyUs = () => {
     <React.Fragment>
       <section
         className='hero'
-        style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),url(${Heroimg.src})`}}>
+        style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(${Heroimg.src})`}}>
       <div className="row col-12">
         <div className={`col-md-8 ${styles.whyUs}`}>
           <h1 className={styles.header}>Why us ?</h1>
-          <h3 className={styles.para}>
+          <h2 className={styles.para}>
           The company itself is a very successful company. Blinded
             or we charge that there is nothing here that pleases us when we see that the labors are repulsed
             flees. Of these, those who are freed from true desire are blessed
@@ -26,7 +26,7 @@ const WhyUs = () => {
             adipisicing elit. It repels being blinded or blinded by hardships
             here nothing escapes from pleasing the accuser. It is just that they are blessed
             but loosed by the desire of convenience.
-          </h3>
+          </h2>
           
         </div>
         <div className="col-md-4">

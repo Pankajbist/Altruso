@@ -1,13 +1,5 @@
 ﻿
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
 
 
@@ -72,7 +64,7 @@ At Altruso, we believe in the transformative power of collective action. We leve
 
 Join Altruso today and embark on an extraordinary journey of giving, innovation, and impact. Together, we can shape a better future, one idea at a time.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">"Back to top</a>)</p>
 
 
 
