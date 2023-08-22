@@ -7,6 +7,8 @@ import Contact from '../components/Contact';
 
 import Heroimg from '../../public/Altruso-background.jpg';
 import { useSelector } from'react-redux';
+import Footer from '@/components/Footer';
+
 
 const home = () => {
   const { fullName, isLoggedIn } = useSelector(state => state.users);
@@ -20,6 +22,7 @@ const home = () => {
         className='hero'
         style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${Heroimg.src})`}}>
         <div className='content'>
+          
           <h1>Welcome to Altruso </h1>
           <h3>
             Altruso: Crowdfunding with a Heart. 
@@ -52,9 +55,14 @@ const home = () => {
           )}
                   
         </div>
+   
       </section>
       <About/>
+      <div>
       <Contact/>
+      <Footer/>
+      </div>
+     
     </>
   );
 };

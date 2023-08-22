@@ -59,7 +59,7 @@ const Index = () => {
   return (
     <>
       <Header />
-      <h1 style={{ textAlign:"center"}}>Trending fundraiser</h1>
+      <h1 style={{ textAlign:"center"}}>All fundraiser</h1>
       <h2 style={{ textAlign:"center", color:"aqua"}}>___________________________</h2>
       <div className="campaign-list">
         {loading ? (
@@ -87,7 +87,7 @@ const Index = () => {
                     <div className="buttons">
                       <button  className="donate-button"  onClick={() => showModal(item)}>Details</button>
                       
-          <button className="donate-button" onClick={() => window.location.href = "https://buy.stripe.com/test_14k03h5A80bVgJq4gg"}>
+          <button className="donate-button" onClick={() => window.location.href = "https://donate.stripe.com/test_14k03h5A80bVgJq4gg"}>
                         Donate
                     </button>
                     </div>

@@ -14,8 +14,8 @@ Footer{
   position: absolute;
   background-color: #000000;
   padding: 0px 0;
-  color:#fff;
- 
+  color:hsl(0, 0%, 100%);
+ height: 20px;
 
   top: 97390;
   width: 100%
@@ -24,6 +24,7 @@ Footer{
 header{
   width: 30%;
   margin: auto;
+  color: #fff;
   padding: 15px 0;
   position:absolute ;
   position: absolute;
@@ -206,7 +207,7 @@ ul.nav-menus{
 /* footer */
 
 footer {
-  min-height: 33vh;
+  min-height: 16vh;
   display: flex;
   flex-direction: column;
   align-items: center;

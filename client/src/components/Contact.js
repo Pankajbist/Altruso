@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../styles/contactUs.module.css";
 
+
 const AboutUs = () => {
   return (
     <React.Fragment>
@@ -31,6 +32,7 @@ Feel free to get in touch with us at Altruso! We're here to help with any inquir
           </div>
         </div>
       </div>
+   
     </React.Fragment>
   );
 };
