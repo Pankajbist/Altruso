@@ -163,26 +163,14 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [X] Home Page
     - [X] Project Details Page
     - [x] User Profile Page
-    - [ ] Project Creation Page
-    - [ ] Explore/Discover Projects Page
-    - [ ] Category/Tags Pages
-    - [ ] Search Results Page
-    - [ ] Payment/Checkout Flow
     - [X] User Authentication & Registration
 
 - [ ] II. Extra Features & Functionality:
-    - [X] Social Media Sharing
-    - [ ] Commenting & Discussion on Projects
-    - [ ] Real-time Project Updates
-    - [ ] Project Backing and Pledging
-    - [ ] User Dashboard with Backed Projects
-    - [ ] Notifications & Email Alerts
     - [ ] Progress Tracking & Goal Achievement
     - [X] User Settings & Preferences
     - [X] User Payment Management
     - [ ]  Project Owner Updates and Communication
     - [X] User Ratings & Reviews for Projects
-    - [ ] Project Update Logs
     - [ ] Estimated Delivery Dates for Backers
 
 #### Back-End Development:
@@ -196,18 +184,14 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [X] Ensure Secure User Data Storage
     - [X] Handle Password Encryption and Reset
 
-- [ ] III. Project Management & Backing
-    - [ ] Enable Project Creation, Editing, and Deletion
-    - [ ] Implement Project Backing and Pledging Mechanism
-    - [ ] Track Project Progress and Funding
+- [X] III. Project Management & Backing
+    - [X] Enable Project Creation, Editing, and Deletion
+    - [X] Implement Project Backing and Pledging Mechanism
 
-- [ ] IV. Payment Processing Integration
+
+- [X] IV. Payment Processing Integration
     -  [X] Integrate Payment Gateway for Secure Transactions
     - [X] Handle Payment Verification and Error Handling
-
-- [ ] V. Notifications & Emails
-    - [ ] Set Up Notifications for Backers and Project Owners
-    - [ ] Send Email Confirmations and Updates
 
 ### Testing 
 
@@ -231,27 +215,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 - [ ] I. Staging Deployment
    - [ ] Deploy the Application to a Staging Environment
-   - [ ] Conduct Final Testing in the Staging Environment
 
-- [ ] II. Production Deployment
-   - [ ] Deploy the Application to the Live Production Server
-   - [ ] Monitor Application Performance and Stability
-   - [ ] Set Up Continuous Integration and Continuous Deployment (CI/CD) Pipelines
-   - [ ] Implement a Rollback Plan in Case of Issues
 
-- [ ] III. Launch & Post-Deployment
-   - [ ] Announce the Crowdfunding Project Launch
-   - [ ] Monitor Project Progress and Backing
-   - [ ] Address Any Post-Deployment Issues
-
- ### Post-Launch & Maintenance 
-
-- [ ] I. Backer Updates and Communication
-   - [ ] Regularly Update Backers on Project Progress
-   - [ ] Respond to Backer Inquiries and Messages
-
-- [ ] II. Project Success & Delivery
-   - [ ] Fulfill Backer Rewards and Project Goals
    
 
 </details>
